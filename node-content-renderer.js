@@ -13,7 +13,7 @@ function isDescendant(older, younger) {
 }
 
 // eslint-disable-next-line react/prefer-stateless-function
-class FileThemeNodeContentRenderer extends Component {
+class CompactThemeNodeContentRenderer extends Component {
   render() {
     const {
       scaffoldBlockPxWidth,
@@ -194,7 +194,7 @@ class FileThemeNodeContentRenderer extends Component {
   }
 }
 
-FileThemeNodeContentRenderer.defaultProps = {
+CompactThemeNodeContentRenderer.defaultProps = {
   buttons: [],
   canDrag: false,
   canDrop: false,
@@ -212,7 +212,7 @@ FileThemeNodeContentRenderer.defaultProps = {
   toggleChildrenVisibility: null,
 };
 
-FileThemeNodeContentRenderer.propTypes = {
+CompactThemeNodeContentRenderer.propTypes = {
   buttons: PropTypes.arrayOf(PropTypes.node),
   canDrag: PropTypes.bool,
   className: PropTypes.string,
@@ -249,4 +249,4 @@ FileThemeNodeContentRenderer.propTypes = {
   isOver: PropTypes.bool.isRequired,
 };
 
-export default FileThemeNodeContentRenderer;
+export default CompactThemeNodeContentRenderer;

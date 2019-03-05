@@ -2,7 +2,7 @@ import React, { Component, Children, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import styles from './tree-node-renderer.scss';
 
-class FileThemeTreeNodeRenderer extends Component {
+class CompactThemeTreeNodeRenderer extends Component {
   render() {
     const {
       children,
@@ -44,7 +44,7 @@ class FileThemeTreeNodeRenderer extends Component {
   }
 }
 
-FileThemeTreeNodeRenderer.defaultProps = {
+CompactThemeTreeNodeRenderer.defaultProps = {
   swapFrom: null,
   swapDepth: null,
   swapLength: null,
@@ -52,7 +52,7 @@ FileThemeTreeNodeRenderer.defaultProps = {
   draggedNode: null,
 };
 
-FileThemeTreeNodeRenderer.propTypes = {
+CompactThemeTreeNodeRenderer.propTypes = {
   treeIndex: PropTypes.number.isRequired,
   treeId: PropTypes.string.isRequired,
   swapFrom: PropTypes.number,
@@ -79,4 +79,4 @@ FileThemeTreeNodeRenderer.propTypes = {
   rowDirection: PropTypes.string.isRequired,
 };
 
-export default FileThemeTreeNodeRenderer;
+export default CompactThemeTreeNodeRenderer;

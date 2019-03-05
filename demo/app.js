@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SortableTree, { toggleExpandedForAll } from 'react-sortable-tree';
-import FileExplorerTheme from '../index';
+import CompactTheme from '../index';
 import './app.css';
 
 class App extends Component {
@@ -118,7 +118,7 @@ class App extends Component {
         style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}
       >
         <div style={{ flex: '0 0 auto', padding: '0 15px' }}>
-          <h3>File Explorer Theme</h3>
+          <h3>Compact Theme</h3>
           <button onClick={this.expandAll}>Expand All</button>
           <button onClick={this.collapseAll}>Collapse All</button>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -167,7 +167,7 @@ class App extends Component {
 
         <div style={{ flex: '1 0 50%', padding: '0 0 0 15px' }}>
           <SortableTree
-            theme={FileExplorerTheme}
+            theme={CompactTheme}
             treeData={treeData}
             onChange={this.updateTreeData}
             searchQuery={searchString}
