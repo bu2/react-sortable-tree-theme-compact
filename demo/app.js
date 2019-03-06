@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import SortableTree, { toggleExpandedForAll } from 'react-sortable-tree';
 import CompactTheme from '../index';
+
+import PlotIcon from '@material-ui/icons/Assessment'
+import SerieIcon from '@material-ui/icons/Timeline'
+
 import './app.css';
 
 class App extends Component {
@@ -182,54 +186,9 @@ class App extends Component {
             canDrag={({ node }) => !node.dragDisabled}
             canDrop={({ nextParent }) => !nextParent || nextParent.isDirectory}
             generateNodeProps={rowInfo => ({
-              icons: rowInfo.node.isDirectory
-                ? [
-                    <div
-                      style={{
-                        borderLeft: 'solid 8px gray',
-                        borderBottom: 'solid 10px gray',
-                        marginRight: 10,
-                        boxSizing: 'border-box',
-                        width: 16,
-                        height: 12,
-                        filter: rowInfo.node.expanded
-                          ? 'drop-shadow(1px 0 0 gray) drop-shadow(0 1px 0 gray) drop-shadow(0 -1px 0 gray) drop-shadow(-1px 0 0 gray)'
-                          : 'none',
-                        borderColor: rowInfo.node.expanded ? 'white' : 'gray',
-                      }}
-                    />,
-                  ]
-                : [
-                    <div
-                      style={{
-                        border: 'solid 1px black',
-                        fontSize: 8,
-                        textAlign: 'center',
-                        marginRight: 10,
-                        width: 12,
-                        height: 16,
-                      }}
-                    >
-                      F
-                    </div>,
-                  ],
-              buttons: [
-                <button
-                  style={{
-                    padding: 0,
-                    borderRadius: '100%',
-                    backgroundColor: 'gray',
-                    color: 'white',
-                    width: 16,
-                    height: 16,
-                    border: 0,
-                    fontWeight: 100,
-                  }}
-                  onClick={() => alertNodeInfo(rowInfo)}
-                >
-                  i
-                </button>,
-              ],
+              icons: rowInfo.node.isDirectory ?
+                [ <PlotIcon color="primary"/>, ]
+                : [ <SerieIcon color="secondary"/>, ]
             })}
           />
         </div>

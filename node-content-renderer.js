@@ -53,14 +53,23 @@ class CompactThemeNodeContentRenderer extends Component {
 
     // Construct the scaffold representing the structure of the tree
     const scaffold = [];
+
+    scaffold.push(
+      <div
+        key={`pre_0`}
+        style={{ width: '13px' }}
+        className={styles.lineBlock}
+      />
+    );
+
     lowerSiblingCounts.forEach((lowerSiblingCount, i) => {
-      scaffold.push(
-        <div
-          key={`pre_${1 + i}`}
-          style={{ width: scaffoldBlockPxWidth }}
-          className={styles.lineBlock}
-        />
-      );
+      // scaffold.push(
+      //   <div
+      //     key={`pre_${1 + i}`}
+      //     style={{ width: '13px' }}
+      //     className={styles.lineBlock}
+      //   />
+      // );
 
       if (treeIndex !== listIndex && i === swapDepth) {
         // This row has been shifted, and is at the depth of
@@ -104,7 +113,7 @@ class CompactThemeNodeContentRenderer extends Component {
                 node.expanded ? styles.collapseButton : styles.expandButton
               }
               style={{
-                left: (lowerSiblingCounts.length - 0.7) * scaffoldBlockPxWidth,
+                left: '5px',
               }}
               onClick={() =>
                 toggleChildrenVisibility({
